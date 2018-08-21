@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,18 +7,92 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+  <script src="scripts/loadlinks.js"></script>
+  <style>
+    .flashit{
+  color:#f2f;
+	-webkit-animation: flash linear 1s infinite;
+	animation: flash linear 1s infinite;
+}
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
+  </style>
 </head>
 
 <body class="ui container">
   <br />
-  <div class="ui center aligned inverted teal segment">
-    <h2 class="ui header">CP Reference Documents</h2>    
+  <div class="ui center aligned teal inverted segment">
+    <h2 class="ui header">Computer Programming Reference Documents</h2>
   </div>
-  <br />
-  <div class="ui active inverted dimmer">
-      <div class="ui large text loader">Loading</div>
-    </div>
+  <!--
+        <div class="ui small right aligned search">
+          <div class="ui icon input">
+            <input class="prompt" type="text" placeholder="Search by concept title...">
+            <i class="search icon"></i>
+          </div>
+          <div class="results"></div>
+        </div>
+ -->
+  <h4 class="ui small header">Syllabus Concepts</h4>
+  <table class="ui small inverted table" id="conceptTable">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Topic No</th>
+        <th>Concept Title</th>
+        <th>Download Link</th>
+      </tr>
+    </thead>
+    <tbody id="tablearea">
 
+    </tbody>
+  </table>
+
+
+
+  <div class="ui active inverted dimmer" id="loading" style="visibility: hidden">
+    <div class="ui large text loader">Loading</div>
+  </div>
+
+
+  <!-- AddToAny BEGIN -->
+  <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:70px; top:250px;">
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_email"></a>
+  </div>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <!-- AddToAny END -->
 </body>
+<footer>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="ui fixed vertical orange footer stacked segment">
+    <div class="ui center aligned container">
+      <a href="#">
+        <i class="copyright outline icon"></i>2018 excitedcoder!</a>
+    </div>
+  </div>
+</footer>
 
 </html>
