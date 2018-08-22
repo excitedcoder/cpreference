@@ -15,7 +15,7 @@ function loadJSON(callback) {
 function insertRow(details) {
     let rs = "<tr>";
     let sno = "<td>" + details["sno"] + "</td>";
-    let tno = "<td>" + details["topicno"] + "</td>";
+    let tno = "<td>" + details["unitno"] + "</td>";
     let ctitle = "<td>" + details["concept"] + "</td>";
     let link = "<td> <a href='" + details["link"] + "'class='ui small green basic button flashit'>Download file</a> </td>";
     let re = "</tr>";
