@@ -21,6 +21,15 @@ function insertRow(details) {
     let re = "</tr>";
     $("#tablearea").append(rs,sno,tno, ctitle, link, re);
 }
+function insertaddRow(details) {
+    let rs = "<tr>";
+    //let sno = "<td>" + details["sno"] + "</td>";
+    //let tno = "<td>" + details["unit"] + "</td>";
+    let ctitle = "<td>" + details["concept"] + "</td>";
+    let link = "<td> <a href='" + details["link"] + "'class='ui small green basic button flashit'>Download</a> </td>";
+    let re = "</tr>";
+    $("#addtable").append(rs, ctitle, link, re);
+}
 $(document).ready(function () {
     $("#loading")[0].style.visibility = "visible";
     loadJSON(function(response) {
@@ -30,7 +39,13 @@ $(document).ready(function () {
             var concepts = data["concepts"];
             //Creating rows in table
             concepts.forEach(element => {
-                insertRow(element);
+                insertRow(element);            
+            });
+
+            //loading additional resources
+            var additional = data["additional"];
+            additional.forEach(element => {
+                insertaddRow(element);
             });
        });       
        $("#loading")[0].style.visibility = "hidden";
