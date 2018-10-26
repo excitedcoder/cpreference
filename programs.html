@@ -1,49 +1,57 @@
-<<!DOCTYPE html>
-    <html>
+<!DOCTYPE html>
+<html>
 
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Programs</title>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Programs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="css/loader.css">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
-       
-    </head>
+</head>
 
-    <body class="ui container">
+<body class="ui container">
+    <br/>
+    <div class="ui grid">
+        <div class="center aligned row">
+            <h3 class="ui center aligned header" id="loader">Loading data...</h3>
+        </div>
+        <div class="row">
+            <table class="ui compact table" id="dataTable">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Category</th>
+                        <th>Title/Name</th>
+                        <th>Execute Link</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
 
-        <table class="ui compact table">
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Category</th>
-                    <th>Title/Name</th>
-                    <th>Execute Link</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
+                </tbody>
 
-            </tbody>
+            </table>
+        </div>
+    </div>
 
-        </table>
-        <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyBs5aJA-ytz8k6ych2oBRNbFcbCowxxpac",
-                authDomain: "cpreference-46d14.firebaseapp.com",
-                databaseURL: "https://cpreference-46d14.firebaseio.com",
-                projectId: "cpreference-46d14",
-                storageBucket: "cpreference-46d14.appspot.com",
-                messagingSenderId: "309468014422"
-            };
-            firebase.initializeApp(config);
-        </script>
-         <script src="scripts/programsLoad.js"></script>
-    </body>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBs5aJA-ytz8k6ych2oBRNbFcbCowxxpac",
+            authDomain: "cpreference-46d14.firebaseapp.com",
+            databaseURL: "https://cpreference-46d14.firebaseio.com",
+            projectId: "cpreference-46d14",
+            storageBucket: "cpreference-46d14.appspot.com",
+            messagingSenderId: "309468014422"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="scripts/programsLoad.js"></script>
+</body>
 
-    </html>
+</html>
