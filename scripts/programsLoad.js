@@ -2,11 +2,11 @@ $(document).ready( () => {
     document.getElementById('dataTable').style.visibility = "hidden";
 });
 var ref = firebase.database().ref().child("programs");
-
+var x = 1;
 ref.on("child_added", data => {
     var tbody = $("#tableBody");
     programs = data.val();
-    var x = 1;
+    
 
     programs.forEach(element => {
         var tr = $('<tr></tr>');
