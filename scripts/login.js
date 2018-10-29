@@ -50,6 +50,9 @@ addR.addEventListener('click', e => {
             'Link' : $('#link').val()
         }).then( () => {
             alert("Inserted successfully.!");
+            document.getElementById('sno').value = "";
+            document.getElementById('title').value = "";
+            document.getElementById('link').value = "";
         });
     }
     else {
@@ -103,7 +106,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     } else {
         // No user is signed in.
         loginform.style.display = "inline";
-        //addform.style.display = "none";
+        addform.style.display = "none";
         signin.style.display = "inline";
         signout.style.display = "none";
     }
