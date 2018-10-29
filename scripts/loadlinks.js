@@ -17,7 +17,7 @@ function insertRow(details) {
     let sno = "<td>" + details["sno"] + "</td>";
     let tno = "<td>" + details["unit"] + "</td>";
     let ctitle = "<td>" + details["concept"] + "</td>";
-    let link = "<td> <a href='" + details["link"] + "'class='ui small green basic button flashit'>Download file</a> </td>";
+    let link = "<td> <a href='" + details["link"] + "'class='ui small green basic button'>Download file</a> </td>";
     let re = "</tr>";
     $("#tablearea").append(rs,sno,tno, ctitle, link, re);
 }
@@ -26,7 +26,7 @@ function insertaddRow(details) {
     //let sno = "<td>" + details["sno"] + "</td>";
     //let tno = "<td>" + details["unit"] + "</td>";
     let ctitle = "<td>" + details["concept"] + "</td>";
-    let link = "<td> <a href='" + details["link"] + "'class='ui small green basic button flashit'>Download</a> </td>";
+    let link = "<td> <a href='" + details["link"] + "'class='ui small green basic button'>Download</a> </td>";
     let re = "</tr>";
     $("#addtable").append(rs, ctitle, link, re);
 }
