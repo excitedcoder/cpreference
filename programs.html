@@ -1,57 +1,51 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<head lang="en">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Programs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
-    <link rel="stylesheet" href="css/loader.css">
-
 </head>
 
-<body class="ui container">
-    <br/>
-    <div class="ui grid">
-        <div class="center aligned row">
-            <h3 class="ui center aligned header" id="loader">Loading data...</h3>
+<body>
+    <br />
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h4 class="h4" id="loader">Loading data...</h4>
+            </div>
         </div>
         <div class="row">
-            <table class="ui compact table" id="dataTable">
-                <thead>
-                    <tr>
-                        <th>S.No</th>
-                        <th>Category</th>
-                        <th>Title/Name</th>
-                        <th>Execute Link</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-
-                </tbody>
-
-            </table>
+            <div class="col">
+                <div class="table-responsive">
+                    <table class="table table-sm table-bordered table-hover" id="dataTable">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>S.No</th>
+                                <th>Category</th>
+                                <th>Title/Name</th>
+                                <th>Execute Link</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyBs5aJA-ytz8k6ych2oBRNbFcbCowxxpac",
-            authDomain: "cpreference-46d14.firebaseapp.com",
-            databaseURL: "https://cpreference-46d14.firebaseio.com",
-            projectId: "cpreference-46d14",
-            storageBucket: "cpreference-46d14.appspot.com",
-            messagingSenderId: "309468014422"
-        };
-        firebase.initializeApp(config);
-    </script>
     <script src="scripts/programsLoad.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

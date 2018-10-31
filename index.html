@@ -15,14 +15,19 @@
 
 <body class="ui container">
   <br />
-  <div class="ui massive inverted teal menu">
+  <div class="ui large inverted teal menu">
     <div class="header item">
       Computer Programming References
     </div>
     <div class="right menu">
-      <a class="item" href="programs.html">
-        Programs
-       </a>
+      <div class="ui dropdown item">
+        Programs <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item">Problem Solving through C Lab</a>
+          <a class="item">Problem Solving Approaches Lab</a>
+          <a class="item" href="programs.html">Practice Programs</a>
+        </div>
+      </div>
       <a class="item">
         Resources/Softwares
       </a>
@@ -68,7 +73,9 @@
   <div class="ui active inverted dimmer" id="loading" style="visibility: hidden">
     <div class="ui large text loader">Loading</div>
   </div>
-
+  <script>
+    $('.ui.dropdown').dropdown();
+  </script>
 </body>
 <footer>
   <br />
