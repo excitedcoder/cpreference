@@ -20,7 +20,7 @@ ref.on("child_added", data => {
     console.log(data.key + ':' + data.val()['AURL']);
 
     var tr = $('<tr></tr>');
-    tr.append("<td>" + program["ENo"] + "</td>");
+    tr.append("<td>" + program["Eno"] + "</td>");
     tr.append("<td>" + program["Title"] + "</td>");
     tr.append("<td> <a href='" + program["AURL"] + "' class='btn btn-primary btn-sm' target='_blank'>See Algorithm</a></td>");
     tr.append("<td> <a href='" + program["FURL"] + "' class='btn btn-primary btn-sm' target='_blank'>See Flowchart</a></td>");
