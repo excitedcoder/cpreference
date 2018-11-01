@@ -17,7 +17,7 @@ var ref = firebase.database().ref().child("PSC");
 ref.on("child_added", data => {
     var tbody = $("#tableBody");
     program = data.val();
-    console.log(data.key + ':' + data.val()['AURL']);
+    //console.log(data.key + ':' + data.val()['AURL']);
 
     var tr = $('<tr></tr>');
     tr.append("<td>" + program["Eno"] + "</td>");
