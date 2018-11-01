@@ -12,16 +12,20 @@ firebase.initializeApp(config);
 
 const loginform = document.getElementById('loginform');
 const addform = document.getElementById('addForm');
+const labform = document.getElementById('labForm');
 
 const email = document.getElementById('email');
 const pwd = document.getElementById('passwd');
+
 const signin = document.getElementById('signin');
 const signout = document.getElementById('signout');
+const submitLab = document.getElementById('submitLab');
 
 var uid = "";
 
 const addR = document.getElementById('addR');
 const cate = document.getElementById('categories');
+const labCategory = document.getElementById('labcate');
 
 const programs = firebase.database().ref().child("programs");
 
@@ -76,6 +80,30 @@ cate.addEventListener('change', e => {
     }       
 });
 
+submitLab.addEventListener('click', () => {
+    if(labCategory.value != "") {
+        console.log("Inserting into Lab programs Category: " + labCategory.value);
+        var postData = {
+            Eno : $('#eno').val(),
+            Title: $('#ptitle').val(),
+            AURL: $('#aurl').val(),
+            FURL: $('#furl').val(),
+            PURL: $('#purl').val()
+        };
+        console.log("Data: " + JSON.stringify(postData));
+        var ref = firebase.database().ref();
+        var newkey = ref.child(labCategory.value).push().key;
+        var updates = {};
+        updates['/'+labCategory.value+'/'+ newkey] = postData;
+        ref.update(updates).then( () => {
+            alert("Inserted Successfully.");
+        }).catch( (err) => {
+            alert(err.message);
+        });
+        
+    }
+});
+
 function clearCategories() {
     console.log('Clearing Dropdownlist.');
     $('#categories').find('option').remove();
@@ -98,6 +126,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         uid = user.uid;
         loginform.style.display = "none";
         addform.style.display = "inline";
+        labform.style.display = "inline";
         signin.style.display = "none";
         signout.style.display = "inline";
         clearCategories();
@@ -107,6 +136,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         // No user is signed in.
         loginform.style.display = "inline";
         addform.style.display = "none";
+        labform.style.display = "none";
         signin.style.display = "inline";
         signout.style.display = "none";
     }
