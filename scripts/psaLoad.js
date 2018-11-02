@@ -14,7 +14,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var ref = firebase.database().ref().child("PSC");
+var ref = firebase.database().ref().child("PSA");
 ref.on("child_added", data => {
     var tbody = $("#tableBody");
     program = data.val();
