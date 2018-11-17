@@ -2,100 +2,100 @@
 <html>
 
 <head>
-  <title> Ajay - CP Reference Documents </title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
-  <script src="scripts/loadlinks.js"></script>
-  <link rel="stylesheet" href="css/flashit.css">
+    <title> CP Reference Documents </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
 </head>
 
-<body class="ui container">
-  <br />
-  <div class="ui large inverted teal menu">
-    <div class="header item">
-      Computer Programming References
-    </div>
-    <div class="right menu">
-      <div class="ui dropdown item">
-        Programs <i class="dropdown icon"></i>
-        <div class="menu">
-          <a class="item" href="psc.html">Problem Solving through C Lab</a>
-          <a class="item" href="psa.html">Problem Solving Approaches Lab</a>
-          <a class="item" href="programs.html">Practice Programs</a>
+<body class="container-fluid">
+    <br />
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">CP Reference Documents</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Programs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="psc.html">Problem Solving through C Lab</a>
+                        <a class="dropdown-item" href="psa.html">Problem Solving Approaches Lab</a>
+                        <a class="dropdown-item" href="programs.html">Practice Programs</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="#">Resources/Softwares</a>
+                    </li>
+            </ul>
         </div>
-      </div>
-      <a class="item">
-        Resources/Softwares
-      </a>
-    </div>
-  </div>
-  <!--
-        <div class="ui small right aligned search">
-          <div class="ui icon input">
-            <input class="prompt" type="text" placeholder="Search by concept title...">
-            <i class="search icon"></i>
-          </div>
-          <div class="results"></div>
+    </nav>
+    <br />
+    <div class="row">
+        <div class="col">
+            <h4 class="h4" id="loader">Loading Concepts data...</h4>
         </div>
- -->
-  <h4 class="ui small header">Syllabus Concepts</h4>
-  <table class="ui compact inverted table" id="conceptTable">
-    <thead>
-      <tr>
-        <th>S.No</th>
-        <th>Unit No</th>
-        <th>Concept Title</th>
-        <th>Download Link</th>
-      </tr>
-    </thead>
-    <tbody id="tablearea">
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive">
+                <table class="table table-sm table-bordered table-hover" id="dataTable">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>S.No</th>
+                            <th>Concept Title/Name</th>
+                            <th>Common Topic for</th>
+                            <th>Download link</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+            <div class="col">
+                <h4 class="h4" id="loader2">Loading Additional Resources data...</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="table-responsive">
+                    <table class="table table-sm table-bordered table-hover" id="dataTable2">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>S.No</th>
+                                <th>Concept Title/Name</th>
+                                <th>Common Topic for</th>
+                                <th>Download link</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-    </tbody>
-  </table>
-  <br />
-  <h4 class="ui small header">Additional Resources</h4>
-  <table class="ui compact inverted table" id="additionaltable">
-    <thead>
-      <tr>
-        <th>Concept Title</th>
-        <th>Download Link</th>
-      </tr>
-    </thead>
-    <tbody id="addtable">
 
-    </tbody>
-  </table>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script src="scripts/loadlinks_v2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 
-  <div class="ui active inverted dimmer" id="loading" style="visibility: hidden">
-    <div class="ui large text loader">Loading</div>
-  </div>
-  <script>
-    $('.ui.dropdown').dropdown();
-  </script>
 </body>
-<footer>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <div class="ui fixed vertical orange footer stacked segment">
-    <div class="ui center aligned container">
-      <a href="#">
-        <i class="copyright outline icon"></i>2018 excitedcoder!</a>
-    </div>
-  </div>
-</footer>
-
-</html>

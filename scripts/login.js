@@ -13,6 +13,7 @@ firebase.initializeApp(config);
 const loginform = document.getElementById('loginform');
 const addform = document.getElementById('addForm');
 const labform = document.getElementById('labForm');
+const conceptform = document.getElementById('conceptform');
 
 const email = document.getElementById('email');
 const pwd = document.getElementById('passwd');
@@ -27,8 +28,10 @@ const addR = document.getElementById('addR');
 const cate = document.getElementById('categories');
 const labCategory = document.getElementById('labcate');
 
-const programs = firebase.database().ref().child("programs");
+const addC = document.getElementById('submitConcept');
+const cCate = document.getElementById('cate');
 
+const programs = firebase.database().ref().child("programs");
 
 signin.addEventListener('click', e => {
     const auth = firebase.auth();
@@ -80,6 +83,26 @@ cate.addEventListener('change', e => {
     }       
 });
 
+addC.addEventListener('click', () => {
+    console.log("Inserting concept: "+ cCate.value + ", " + $("#ctitle").val());
+    var cdata = {
+        Sno: $("#sno").val(),
+        Title: $("#ctitle").val(),
+        For: $("#for").val(),
+        URL: $("#url").val()
+    };
+    var ref = firebase.database().ref();
+    var newkey = ref.child(cCate.value).push().key;
+    var updates = {};
+    updates['/'+cCate.value+'/'+ newkey] = cdata;
+    ref.update(updates).then( () => {
+        alert("Inserted Successfully.");
+    }).catch( (err) => {
+        alert(err.message);
+        console.log(err.message);
+    });
+});
+
 submitLab.addEventListener('click', () => {
     if(labCategory.value != "") {
         console.log("Inserting into Lab programs Category: " + labCategory.value);
@@ -90,7 +113,7 @@ submitLab.addEventListener('click', () => {
             FURL: $('#furl').val(),
             PURL: $('#purl').val()
         };
-        console.log("Data: " + JSON.stringify(postData));
+        //console.log("Data: " + JSON.stringify(postData));
         var ref = firebase.database().ref();
         var newkey = ref.child(labCategory.value).push().key;
         var updates = {};
@@ -99,6 +122,7 @@ submitLab.addEventListener('click', () => {
             alert("Inserted Successfully.");
         }).catch( (err) => {
             alert(err.message);
+            console.log(err.message);
         });
         
     }
@@ -127,6 +151,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         loginform.style.display = "none";
         addform.style.display = "inline";
         labform.style.display = "inline";
+        conceptform.display = "inline";
         signin.style.display = "none";
         signout.style.display = "inline";
         clearCategories();
@@ -137,6 +162,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         loginform.style.display = "inline";
         addform.style.display = "none";
         labform.style.display = "none";
+        conceptform.display = "none";
         signin.style.display = "inline";
         signout.style.display = "none";
     }

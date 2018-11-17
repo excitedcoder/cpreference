@@ -29,7 +29,7 @@ ref.on("child_added", data => {
 
     tbody.append(tr);
     
-    document.getElementById('loader').innerText = "Available List of Programs:";
+    document.getElementById('loader').innerText = "Problem Solving through C Lab: Available List of Programs.";
     document.getElementById('dataTable').style.visibility = "visible";
     document.getElementById('gifimg').style.visibility = "visible";
 });
