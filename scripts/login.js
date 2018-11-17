@@ -86,7 +86,7 @@ cate.addEventListener('change', e => {
 addC.addEventListener('click', () => {
     console.log("Inserting concept: "+ cCate.value + ", " + $("#ctitle").val());
     var cdata = {
-        Sno: $("#sno").val(),
+        Sno: $("#csno").val(),
         Title: $("#ctitle").val(),
         For: $("#for").val(),
         URL: $("#url").val()
