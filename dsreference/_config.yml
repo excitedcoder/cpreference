@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Data Structures through C
 description: Site for data structure study reference.
-baseurl: "/dsreference/" # the subpath of your site, e.g. /blog
+baseurl: "cpreference.tk/dsreference/" # the subpath of your site, e.g. /blog
 # url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
